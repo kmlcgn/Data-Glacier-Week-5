@@ -1,14 +1,47 @@
-<p style="text-align: center;">&nbsp;</p>
+<!DOCTYPE html>
+<html >
 <!--From https://codepen.io/frytyler/pen/EGdtg-->
-<p style="text-align: center;">&nbsp;</p>
-<p style="text-align: center;">    </p>
-<div class="login" style="text-align: center;">
-<h1>Prediction of Price Charged</h1>
-<form action="{{ url_for('predict')}}" method="post">
-<div class="numericals"><input name="KM_Travelled" required="required" type="text" placeholder="KM Travelled" /> <input name="Cost_of_Trip" required="required" type="text" placeholder="Cost of Trip" /><hr /></div>
-<label for="cars"><label for="cars">Select Cab Firm:</label></label><hr /><label for="cars"></label>
-<div class="box"><select id="company" name="company" required="">
-<option value="0">Pink</option>
-<option value="1">Yellow</option>
-</select><hr /></div>
-<button class="btn btn-primary btn-block btn-large" type="submit">Predict</button></form><br /><br />{{ prediction_text }}</div>
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<script src="{{url_for('static', filename='javascriptfile.js')}}"></script>
+
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Prediction of Price Charged</h1>
+
+    <form action="{{ url_for('predict')}}"method="post">
+    	<div class="numericals">
+        <input type="text" name="KM_Travelled" placeholder="KM Travelled" required="required" />
+        <input type="text" name="Cost_of_Trip" placeholder="Cost of Trip" required="required" />
+      </div>
+    
+        <label for="cars">Select Cab Firm:</label>
+        <div class="box">
+            <select name="company" id="company" required>
+              <option value=0>Pink</option>
+              <option value=1>Yellow</option>
+            </select> 
+          </div>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
+
+
