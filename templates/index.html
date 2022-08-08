@@ -1,0 +1,14 @@
+<p style="text-align: center;">&nbsp;</p>
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">    </p>
+<div class="login" style="text-align: center;">
+<h1>Prediction of Price Charged</h1>
+<form action="{{ url_for('predict')}}" method="post">
+<div class="numericals"><input name="KM_Travelled" required="required" type="text" placeholder="KM Travelled" /> <input name="Cost_of_Trip" required="required" type="text" placeholder="Cost of Trip" /><hr /></div>
+<label for="cars"><label for="cars">Select Cab Firm:</label></label><hr /><label for="cars"></label>
+<div class="box"><select id="company" name="company" required="">
+<option value="0">Pink</option>
+<option value="1">Yellow</option>
+</select><hr /></div>
+<button class="btn btn-primary btn-block btn-large" type="submit">Predict</button></form><br /><br />{{ prediction_text }}</div>
